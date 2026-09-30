@@ -48,8 +48,6 @@
             bottom: 10px;
             right: 30px;
         }
-       
-
     </style>
 </head>
 
@@ -68,7 +66,7 @@
         text.addEventListener("input",() =>{
              chatacters = text.value.length;
              counter.innerText = chatacters;
-             if(chatacters >=2){
+             if(chatacters >=250){
                 text.style.border ="2px solid red";
                 text.style.outline ="2px solid red";
              }else{
