@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-no-3</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 20rem;
+            width: 20rem;
+            background-color: rgb(106, 102, 102);
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: inset 0px -5px 10px 0px rgba(0, 0, 0, 0.483);
+            margin: 4px;
+            padding: 10px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container textarea {
+            height: 90%;
+            width: 100%;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            position: relative;
+            resize: none;
+        }
+        .container textarea:focus{
+            outline: 2px solid black;
+        }
+       
+        .container p{
+            height: 1rem;
+            width: 1rem;
+            font-size: 0.75rem;
+            position: absolute;
+            bottom: 10px;
+            right: 30px;
+        }
+       
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1> Creating a Restricted text area</h1>
+        <textarea placeholder="write something" name="textArea" id="textarea" maxlength="250"></textarea>
+        <p ><p1 id="counter">0</p1>/250</p>
+    </div>
+    <script>
+        
+        let counter = document.querySelector("#counter");
+        let text = document.querySelector("#textarea");
+        let chatacters;
+        const btn = document.querySelector("#btn");
+        text.addEventListener("input",() =>{
+             chatacters = text.value.length;
+             counter.innerText = chatacters;
+             if(chatacters >=2){
+                text.style.border ="2px solid red";
+                text.style.outline ="2px solid red";
+             }else{
+                text.style.border ="2px solid black";
+                text.style.outline ="2px solid black";
+             }
+        })
+    </script>
+</body>
+
+</html>
